@@ -1,4 +1,4 @@
-@extends('layouts.app') <!-- Sesuaikan dengan layout kamu -->
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -6,17 +6,25 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th> <!-- Ganti sesuai dengan kolom student -->
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Jurusan</th>
+                <th>No. Telp</th>
+                <th>Alamat</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($students as $student)
             <tr>
-                <td>{{ $student->id }}</td>
-                <td>{{ $student->name }}</td>
-                <td>{{ $student->email }}</td> <!-- Sesuaikan dengan field -->
+                <td>{{ $student->nim }}</td>
+                <td>{{ $student->nama }}</td>
+                <td>{{ $student->email }}</td>
+                <td>{{ $student->jurusan }}</td>
+                <td>{{ $student->no_telp }}</td>
+                <td>{{ $student->alamat }}</td>
+                <td>{{ $student->status }}</td>
             </tr>
             @endforeach
         </tbody>
