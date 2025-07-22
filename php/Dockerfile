@@ -143,6 +143,7 @@ RUN chmod +x /usr/bin/t
 RUN echo '#!/bin/bash\n/usr/local/bin/php /var/www/html/artisan config:clear\n/bin/bash\n/usr/local/bin/php /var/www/html/artisan dusk -d memory_limit=2G --stop-on-error --stop-on-failure --testdox-text=tests/report-dusk.txt "$@"' > /usr/bin/d
 RUN chmod +x /usr/bin/d
 
+RUN echo "expose_php=Off" > /usr/local/etc/php/conf.d/expose.ini
 RUN rm -r /var/lib/apt/lists/*
 
 WORKDIR /var/www/html
